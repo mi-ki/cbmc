@@ -55,7 +55,7 @@ regression/**/*.smt2
 libzip/
 zlib/
 minisat*/
-glucose-syrup/
+#glucose-syrup/
 
 # flex/bison generated files
 src/ansi-c/ansi_c_lex.yy.cpp

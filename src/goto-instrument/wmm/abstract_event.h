@@ -29,21 +29,21 @@ public:
   /* for now, both fence functions and asm fences accepted */
   enum class operationt { Write, Read, Fence, Lwfence, ASMfence };
 
-  operationt operation;
-  unsigned thread;
+  operationt operation = operationt::Write;
+  unsigned thread = 0;
   irep_idt variable;
-  unsigned id;
+  unsigned id = 0;
   source_locationt source_location;
-  bool local;
+  bool local = false;
 
   // for ASMfence
-  bool WRfence;
-  bool WWfence;
-  bool RRfence;
-  bool RWfence;
-  bool WWcumul;
-  bool RWcumul;
-  bool RRcumul;
+  bool WRfence = false;
+  bool WWfence = false;
+  bool RRfence = false;
+  bool RWfence = false;
+  bool WWcumul = false;
+  bool RWcumul = false;
+  bool RRcumul = false;
 
   abstract_eventt()
   {
