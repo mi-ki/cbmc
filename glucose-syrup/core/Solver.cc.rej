@@ -1,0 +1,20 @@
+--- core/Solver.cc	2014-10-03 10:10:21.000000000 +0100
++++ core/Solver.cc	2016-07-08 13:06:02.772186004 +0100
+@@ -931,7 +931,6 @@ void Solver::uncheckedEnqueue(Lit p, CRe
+ CRef Solver::propagate() {
+     CRef confl = CRef_Undef;
+     int num_props = 0;
+-    int previousqhead = qhead;
+     watches.cleanAll();
+     watchesBin.cleanAll();
+     unaryWatches.cleanAll();
+@@ -1405,7 +1404,9 @@ lbool Solver::search(int nof_conflicts)
+                 decisions++;
+                 next = pickBranchLit();
+                 if (next == lit_Undef) {
++#if 0
+                     printf("c last restart ## conflicts  :  %d %d \n", conflictC, decisionLevel());
++#endif
+                     // Model found:
+                     return l_True;
+                 }
