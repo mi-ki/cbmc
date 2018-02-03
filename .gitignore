@@ -54,7 +54,7 @@ regression/**/*.smt2
 # libs downloaded by make [name]-download
 libzip/
 zlib/
-minisat*/
+#minisat*/
 #glucose-syrup/
 
 # flex/bison generated files
